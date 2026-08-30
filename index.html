@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gráficas Olímpica | Retail & Corporate Architecture</title>
+    
+    <!-- CSS -->
+    <link href="styles.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    
+    <!-- Fonts: Strictly Raleway playing with weights -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    
+    <!-- AOS Animation CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <style>
+        :root {
+            --brand-yellow: #FFFF00; /* Brighter, purer yellow matching the brand */
+            --bg-color: #F9F9F8;
+            --text-dark: #1A1A1A;
+        }
+        body { 
+            font-family: 'Raleway', sans-serif; 
+            background-color: var(--bg-color);
+            color: var(--text-dark);
+        }
+        
+        /* Smooth, ultra-premium image reveals */
+        .img-reveal { clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); transition: clip-path 1.2s cubic-bezier(0.77, 0, 0.175, 1); }
+        .aos-animate.img-reveal { clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); }
+        html:not(.no-js) [data-aos="img-reveal"] { clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%); }
+        html:not(.no-js) [data-aos="img-reveal"].aos-animate { clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); }
+
+        /* Minimal accents */
+        .yellow-dot { display: inline-block; width: 6px; height: 6px; background-color: var(--brand-yellow); border-radius: 50%; margin-left: 2px; }
+        .hover-line { position: relative; overflow: hidden; color: inherit; }
+        .hover-line::after { content: ''; position: absolute; bottom: 0; left: 0; width: 100%; height: 1px; background-color: currentColor; transform: translateX(-101%); transition: transform 0.5s cubic-bezier(0.77, 0, 0.175, 1); }
+        .hover-line:hover::after { transform: translateX(0); }
+    </style>
+</head>
+<body class="antialiased selection:bg-[#FFFF00] selection:text-black overflow-x-hidden">
+
+    <!-- Header / Navigation (Brand Yellow) -->
+    <header class="fixed w-full z-50 transition-all duration-500 py-4 bg-[#FFFF00] text-black shadow-sm" id="navbar">
+        <div class="max-w-[90%] mx-auto flex justify-between items-center">
+            <div class="flex-shrink-0 flex items-center">
+                <img src="img/logo-graficas.png" alt="Gráficas Olímpica" class="h-12 object-contain">
+            </div>
+            <nav class="hidden md:flex space-x-12 items-center">
+                <a href="#estudio" class="text-xs uppercase tracking-[0.15em] hover-line pb-1 font-medium">Estudio</a>
+                <a href="#divisiones" class="text-xs uppercase tracking-[0.15em] hover-line pb-1 font-medium">Divisiones</a>
+                <a href="#infraestructura" class="text-xs uppercase tracking-[0.15em] hover-line pb-1 font-medium">Infraestructura</a>
+                <a href="#contacto" class="text-xs uppercase tracking-[0.15em] font-bold border border-black px-6 py-2 hover:bg-black hover:text-[#FFFF00] transition-colors duration-500">Contacto</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- 1. Hero Section (Editorial Style) -->
+    <section class="relative min-h-screen flex items-center pt-24 pb-12">
+        <div class="max-w-[90%] mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            
+            <!-- Text Content -->
+            <div class="lg:col-span-5 lg:col-start-1 z-10" data-aos="fade-up" data-aos-duration="1200">
+                <div class="mb-8 flex items-center gap-4">
+                    <span class="w-8 h-px bg-yellow-500"></span>
+                    <span class="text-[9px] uppercase tracking-[0.3em] text-gray-500">Estrategia & Construcción de Marca</span>
+                </div>
+                
+                <h1 class="text-5xl md:text-6xl lg:text-[5rem] font-light leading-[1.1] text-[#111] mb-8 tracking-tight">
+                    Ingeniería <br>
+                    <span class="font-black tracking-tighter">Visual</span> & <br>
+                    <span class="font-black tracking-tighter">Retail.</span>
+                </h1>
+                
+                <p class="text-sm md:text-base text-gray-600 font-light max-w-sm leading-relaxed mb-12">
+                    Traducimos la identidad corporativa en entornos físicos de alto impacto. 50 años liderando la adecuación comercial a escala nacional.
+                </p>
+                
+                <a href="#divisiones" class="inline-flex items-center text-xs uppercase tracking-[0.2em] font-semibold text-[#111] group">
+                    Explorar el trabajo 
+                    <span class="w-8 h-px bg-[#111] ml-4 group-hover:w-16 group-hover:bg-yellow-500 transition-all duration-500"></span>
+                </a>
+            </div>
+
+            <!-- Image Composition -->
+            <div class="lg:col-span-6 lg:col-start-7 relative">
+                <div class="relative w-full aspect-[3/4] overflow-hidden rounded-[2rem] shadow-xl" data-aos="img-reveal" data-aos-duration="1500">
+                    <img src="img/premium_hero.jpg" alt="Arquitectura Corporativa" class="w-full h-full object-cover transition-all duration-1000 scale-105 hover:scale-100">
+                </div>
+                
+                <!-- Floating small image breaking the grid -->
+                <div class="absolute -bottom-16 -left-16 w-2/3 aspect-square overflow-hidden hidden md:block shadow-2xl rounded-[2rem] border-4 border-[#F9F9F8]" data-aos="img-reveal" data-aos-delay="400" data-aos-duration="1500">
+                    <img src="img/premium_float.jpg" alt="Retail Design" class="w-full h-full object-cover opacity-90">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. The Studio / Approach -->
+    <section id="estudio" class="py-32 bg-white mt-12">
+        <div class="max-w-[90%] mx-auto">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 md:gap-24 items-center">
+                
+                <!-- Left Column: Text & New Supporting Image -->
+                <div class="lg:col-span-5 flex flex-col justify-center" data-aos="fade-right">
+                    <h2 class="text-5xl md:text-6xl font-light tracking-tight text-[#111] mb-6 leading-[1.1]">La solidez de la <br><span class="font-black tracking-tighter">experiencia</span><span class="yellow-dot"></span></h2>
+                    <p class="text-lg text-gray-500 font-light leading-relaxed max-w-md">Nuestra trayectoria no se mide solo en cinco décadas de historia, sino en la capacidad probada de materializar desafíos arquitectónicos bajo estándares de precisión milimétrica.</p>
+                    
+                    <!-- Supporting Image -->
+                    <div class="mt-12 md:mt-16 overflow-hidden rounded-[2rem] aspect-[16/10] shadow-[0_10px_40px_-15px_rgba(0,0,0,0.1)] group">
+                        <img src="img/premium_float.jpg" alt="Detalle operativo" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105 grayscale hover:grayscale-0">
+                    </div>
+                </div>
+                
+                <!-- Right Column: Features -->
+                <div class="lg:col-span-6 lg:col-start-7" data-aos="fade-up" data-aos-delay="200">
+                    <div class="flex flex-col gap-12 bg-[#F9F9F8] p-12 md:p-16 rounded-[2.5rem] border border-gray-100 shadow-[0_10px_40px_-15px_rgba(0,0,0,0.03)]">
+                        <div>
+                            <span class="text-xs font-bold uppercase tracking-widest text-yellow-500 mb-4 block">Garantía</span>
+                            <h4 class="text-3xl md:text-4xl font-black tracking-tighter mb-4 text-[#111]">Calidad Certificada 3M™</h4>
+                            <p class="text-base text-gray-500 font-light leading-relaxed">Ejecución bajo los más estrictos estándares técnicos, utilizando materiales originales para resultados perdurables.</p>
+                        </div>
+                        <div class="w-full h-px bg-gray-200"></div>
+                        <div>
+                            <span class="text-xs font-bold uppercase tracking-widest text-yellow-500 mb-4 block">Alcance</span>
+                            <h4 class="text-3xl md:text-4xl font-black tracking-tighter mb-4 text-[#111]">Hubs Operativos</h4>
+                            <p class="text-base text-gray-500 font-light leading-relaxed">Centros estratégicos en Medellín y Cali que optimizan tiempos de respuesta y garantizan cobertura nacional.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. Divisions (Minimalist Cards) -->
+    <section id="divisiones" class="py-32 bg-[#F9F9F8]">
+        <div class="max-w-[90%] mx-auto">
+            <div class="mb-24 flex flex-col md:flex-row justify-between items-end gap-8">
+                <h2 class="text-4xl md:text-6xl font-black tracking-tighter text-[#111]">Divisiones<span class="yellow-dot"></span></h2>
+                <p class="text-base md:text-lg text-gray-500 font-light max-w-md">Desarrollamos entornos que comunican y venden, integrando diseño, manufactura y montaje a gran escala.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <!-- Card 1 -->
+                <div class="group cursor-pointer bg-white p-10 md:p-12 rounded-[2.5rem] shadow-[0_10px_40px_-15px_rgba(0,0,0,0.05)] hover:shadow-[0_20px_50px_-15px_rgba(0,0,0,0.1)] transition-all duration-500" data-aos="fade-up">
+                    <div class="overflow-hidden aspect-[4/3] rounded-[1.5rem] mb-12">
+                        <img src="img/premium_banca.jpg" alt="Banca" class="w-full h-full object-cover transition-all duration-1000 ease-out group-hover:scale-105">
+                    </div>
+                    <div class="flex justify-between items-start pt-6">
+                        <div>
+                            <span class="text-xs font-bold uppercase tracking-widest text-gray-400 mb-6 block group-hover:text-yellow-500 transition-colors">Sector Financiero</span>
+                            <h3 class="text-3xl md:text-4xl font-light text-[#111] tracking-tight mb-6">Adecuación <br><span class="font-black tracking-tighter">Bancaria</span></h3>
+                        </div>
+                        <div class="w-12 h-12 rounded-full bg-gray-50 flex items-center justify-center group-hover:bg-yellow-500 transition-colors duration-500 flex-shrink-0 mt-8">
+                            <i class="fas fa-arrow-right text-gray-400 transform -rotate-45 group-hover:rotate-0 group-hover:text-[#111] transition-all duration-500"></i>
+                        </div>
+                    </div>
+                    <p class="text-base text-gray-500 font-light mt-4 max-w-sm">Mobiliario operativo, módulos de autoservicio, revestimientos arquitectónicos y señalética normativa de alta seguridad.</p>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="group cursor-pointer md:mt-32 bg-white p-10 md:p-12 rounded-[2.5rem] shadow-[0_10px_40px_-15px_rgba(0,0,0,0.05)] hover:shadow-[0_20px_50px_-15px_rgba(0,0,0,0.1)] transition-all duration-500" data-aos="fade-up" data-aos-delay="200">
+                    <div class="overflow-hidden aspect-[4/3] rounded-[1.5rem] mb-12">
+                        <img src="img/premium_retail.jpg" alt="Retail" class="w-full h-full object-cover transition-all duration-1000 ease-out group-hover:scale-105">
+                    </div>
+                    <div class="flex justify-between items-start pt-6">
+                        <div>
+                            <span class="text-xs font-bold uppercase tracking-widest text-gray-400 mb-6 block group-hover:text-yellow-500 transition-colors">Consumo Masivo</span>
+                            <h3 class="text-3xl md:text-4xl font-light text-[#111] tracking-tight mb-6">Retail & <br><span class="font-black tracking-tighter">Franquicias</span></h3>
+                        </div>
+                        <div class="w-12 h-12 rounded-full bg-gray-50 flex items-center justify-center group-hover:bg-yellow-500 transition-colors duration-500 flex-shrink-0 mt-8">
+                            <i class="fas fa-arrow-right text-gray-400 transform -rotate-45 group-hover:rotate-0 group-hover:text-[#111] transition-all duration-500"></i>
+                        </div>
+                    </div>
+                    <p class="text-base text-gray-500 font-light mt-4 max-w-sm">Fachadas comerciales, avisos termoformados y decoración integral de tiendas de conveniencia.</p>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="group cursor-pointer bg-white p-10 md:p-12 rounded-[2.5rem] shadow-[0_10px_40px_-15px_rgba(0,0,0,0.05)] hover:shadow-[0_20px_50px_-15px_rgba(0,0,0,0.1)] transition-all duration-500" data-aos="fade-up">
+                    <div class="overflow-hidden aspect-[4/3] rounded-[1.5rem] mb-12">
+                        <img src="img/premium_super.jpg" alt="Grandes Superficies" class="w-full h-full object-cover transition-all duration-1000 ease-out group-hover:scale-105">
+                    </div>
+                    <div class="flex justify-between items-start pt-6">
+                        <div>
+                            <span class="text-xs font-bold uppercase tracking-widest text-gray-400 mb-6 block group-hover:text-yellow-500 transition-colors">Supermercados</span>
+                            <h3 class="text-3xl md:text-4xl font-light text-[#111] tracking-tight mb-6">Grandes <br><span class="font-black tracking-tighter">Superficies</span></h3>
+                        </div>
+                        <div class="w-12 h-12 rounded-full bg-gray-50 flex items-center justify-center group-hover:bg-yellow-500 transition-colors duration-500 flex-shrink-0 mt-8">
+                            <i class="fas fa-arrow-right text-gray-400 transform -rotate-45 group-hover:rotate-0 group-hover:text-[#111] transition-all duration-500"></i>
+                        </div>
+                    </div>
+                    <p class="text-base text-gray-500 font-light mt-4 max-w-sm">Mega-estructuras, branding exterior de gran escala y revestimientos arquitectónicos para supermercados.</p>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="group cursor-pointer md:mt-32 bg-white p-10 md:p-12 rounded-[2.5rem] shadow-[0_10px_40px_-15px_rgba(0,0,0,0.05)] hover:shadow-[0_20px_50px_-15px_rgba(0,0,0,0.1)] transition-all duration-500" data-aos="fade-up" data-aos-delay="200">
+                    <div class="overflow-hidden aspect-[4/3] rounded-[1.5rem] mb-12">
+                        <img src="img/premium_interior.jpg" alt="Señalización Interior" class="w-full h-full object-cover transition-all duration-1000 ease-out group-hover:scale-105">
+                    </div>
+                    <div class="flex justify-between items-start pt-6">
+                        <div>
+                            <span class="text-xs font-bold uppercase tracking-widest text-gray-400 mb-6 block group-hover:text-yellow-500 transition-colors">Comunicación Visual</span>
+                            <h3 class="text-3xl md:text-4xl font-light text-[#111] tracking-tight mb-6">Señalización <br><span class="font-black tracking-tighter">Interior</span></h3>
+                        </div>
+                        <div class="w-12 h-12 rounded-full bg-gray-50 flex items-center justify-center group-hover:bg-yellow-500 transition-colors duration-500 flex-shrink-0 mt-8">
+                            <i class="fas fa-arrow-right text-gray-400 transform -rotate-45 group-hover:rotate-0 group-hover:text-[#111] transition-all duration-500"></i>
+                        </div>
+                    </div>
+                    <p class="text-base text-gray-500 font-light mt-4 max-w-sm">Sistemas de orientación comercial, material POP, ambientación de pasillos y marcación de categorías.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!-- 1.5. Trusted By (Clients Marquee/Grid) -->
+    <section class="py-16 bg-white border-y border-gray-100">
+        <div class="max-w-[90%] mx-auto">
+            <p class="text-[10px] uppercase tracking-[0.3em] text-gray-400 text-center mb-10 font-bold">Marcas que respaldan nuestra ingeniería visual</p>
+            <div class="flex flex-wrap justify-center items-center gap-12 md:gap-24 opacity-60 grayscale hover:grayscale-0 transition-all duration-500">
+                <!-- Client 1 -->
+                <h4 class="text-2xl font-black tracking-tighter text-[#111]">Banco de Bogotá</h4>
+                <!-- Client 2 -->
+                <h4 class="text-3xl font-black text-red-600 tracking-widest">OXXO</h4>
+                <!-- Client 3 -->
+                <h4 class="text-2xl font-black text-green-600 tracking-tighter flex items-center gap-1"><i class="fas fa-leaf text-lg"></i> Banco Popular</h4>
+                <!-- Client 4 -->
+                <h4 class="text-2xl font-black text-orange-500 tracking-tighter">ara</h4>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Infrastructure List (Editorial Typographic) -->
+    <section id="infraestructura" class="py-32 bg-[#111] text-white">
+        <div class="max-w-[90%] mx-auto">
+            <h2 class="text-sm md:text-base font-bold uppercase tracking-[0.3em] text-[#FFFF00] mb-20 text-center">Infraestructura Interna</h2>
+            
+            <div class="max-w-5xl mx-auto divide-y divide-white/10">
+                <div class="py-12 group cursor-pointer flex flex-col md:flex-row justify-between items-start md:items-center" data-aos="fade-up">
+                    <h3 class="text-3xl md:text-5xl font-light tracking-tight text-white group-hover:text-[#FFFF00] transition-colors duration-500">01. <span class="font-black tracking-tighter">Metalmecánica</span> Aplicada</h3>
+                    <p class="text-base md:text-lg text-gray-400 font-light max-w-sm mt-6 md:mt-0 text-left md:text-right opacity-0 group-hover:opacity-100 transition-opacity duration-500 leading-relaxed">Corte estructural, soldadura y ensamblaje para mobiliario y avisos elevados.</p>
+                </div>
+                <div class="py-12 group cursor-pointer flex flex-col md:flex-row justify-between items-start md:items-center" data-aos="fade-up">
+                    <h3 class="text-3xl md:text-5xl font-light tracking-tight text-white group-hover:text-[#FFFF00] transition-colors duration-500">02. Cama Plana UV <span class="font-black tracking-tighter">& CNC</span></h3>
+                    <p class="text-base md:text-lg text-gray-400 font-light max-w-sm mt-6 md:mt-0 text-left md:text-right opacity-0 group-hover:opacity-100 transition-opacity duration-500 leading-relaxed">Precisión milimétrica sobre maderas, acrílicos, alucobond y sustratos rígidos.</p>
+                </div>
+                <div class="py-12 group cursor-pointer flex flex-col md:flex-row justify-between items-start md:items-center" data-aos="fade-up">
+                    <h3 class="text-3xl md:text-5xl font-light tracking-tight text-white group-hover:text-[#FFFF00] transition-colors duration-500">03. Artes Gráficas <span class="font-black tracking-tighter">Offset</span></h3>
+                    <p class="text-base md:text-lg text-gray-400 font-light max-w-sm mt-6 md:mt-0 text-left md:text-right opacity-0 group-hover:opacity-100 transition-opacity duration-500 leading-relaxed">Impresión masiva y gran formato con fidelidad de color corporativa absoluta.</p>
+                </div>
+                <div class="py-12 group cursor-pointer flex flex-col md:flex-row justify-between items-start md:items-center" data-aos="fade-up">
+                    <h3 class="text-3xl md:text-5xl font-light tracking-tight text-white group-hover:text-[#FFFF00] transition-colors duration-500">04. Instalación <span class="font-black tracking-tighter">Certificada</span></h3>
+                    <p class="text-base md:text-lg text-gray-400 font-light max-w-sm mt-6 md:mt-0 text-left md:text-right opacity-0 group-hover:opacity-100 transition-opacity duration-500 leading-relaxed">Personal técnico certificado en alturas para despliegues seguros a nivel nacional.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. Minimal Contact Form -->
+    <section id="contacto" class="py-32 bg-white">
+        <div class="max-w-4xl mx-auto px-6">
+            <div class="text-center mb-24" data-aos="fade-up">
+                <h2 class="text-5xl md:text-6xl font-light tracking-tight text-[#111] mb-6">Iniciar <span class="font-black tracking-tighter">Proyecto</span><span class="yellow-dot"></span></h2>
+                <p class="text-gray-500 font-light text-base md:text-lg">Contáctenos para licitaciones corporativas y evaluación de ingeniería visual.</p>
+            </div>
+
+            <form action="#" method="POST" class="space-y-12 bg-[#F9F9F8] p-12 md:p-20 rounded-[3rem] shadow-[0_10px_40px_-15px_rgba(0,0,0,0.03)] border border-gray-100" data-aos="fade-up" data-aos-delay="200">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-16">
+                    <div class="relative">
+                        <input type="text" id="empresa" class="w-full bg-transparent border-b-2 border-gray-200 py-4 text-base text-[#111] focus:outline-none focus:border-yellow-500 transition-colors peer placeholder-transparent" placeholder="Empresa" required>
+                        <label for="empresa" class="absolute left-0 -top-4 text-xs font-bold uppercase tracking-widest text-gray-400 transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-placeholder-shown:top-4 peer-focus:-top-4 peer-focus:text-xs peer-focus:text-yellow-500">Razón Social</label>
+                    </div>
+                    <div class="relative">
+                        <input type="email" id="email" class="w-full bg-transparent border-b-2 border-gray-200 py-4 text-base text-[#111] focus:outline-none focus:border-yellow-500 transition-colors peer placeholder-transparent" placeholder="Email" required>
+                        <label for="email" class="absolute left-0 -top-4 text-xs font-bold uppercase tracking-widest text-gray-400 transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-placeholder-shown:top-4 peer-focus:-top-4 peer-focus:text-xs peer-focus:text-yellow-500">Correo Corporativo</label>
+                    </div>
+                </div>
+
+                <div class="relative mt-8">
+                    <select id="tipo" class="w-full bg-transparent border-b-2 border-gray-200 py-4 text-base text-gray-600 focus:outline-none focus:border-yellow-500 transition-colors appearance-none cursor-pointer">
+                        <option value="" disabled selected>Área de requerimiento...</option>
+                        <option value="adecuacion">Adecuación Arquitectónica (Bancos / Oficinas)</option>
+                        <option value="retail">Despliegue Retail / Fachadas</option>
+                        <option value="senalizacion">Señalética y Avisos Elevados</option>
+                    </select>
+                    <i class="fas fa-chevron-down absolute right-0 top-6 text-xs text-gray-400 pointer-events-none"></i>
+                </div>
+
+                <div class="pt-12 text-center">
+                    <button type="submit" class="bg-[#111] text-white text-xs font-bold uppercase tracking-[0.2em] px-16 py-6 rounded-full hover:bg-yellow-500 hover:text-[#111] transition-colors duration-500 shadow-xl hover:shadow-2xl">
+                        Enviar Solicitud
+                    </button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+<!-- 6. Footer (Premium Corporate) -->
+    <footer class="bg-[#111] text-white pt-24 pb-12 border-t border-white/10">
+        <div class="max-w-[90%] mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-8 mb-20">
+                <!-- Branding -->
+                <div class="md:col-span-4">
+                    <img src="img/logo-graficas.png" alt="Gráficas Olímpica" class="h-10 mb-8 filter brightness-0 invert opacity-90">
+                    <p class="text-gray-400 font-light text-sm max-w-xs leading-relaxed">
+                        Ingeniería visual y arquitectura corporativa. Materializando desafíos a gran escala con precisión milimétrica desde hace cinco décadas.
+                    </p>
+                </div>
+
+                <!-- Hubs Operativos -->
+                <div class="md:col-span-3">
+                    <h5 class="text-[#FFFF00] text-xs font-bold uppercase tracking-[0.2em] mb-6">Hubs Operativos</h5>
+                    <ul class="space-y-4 text-gray-400 font-light text-sm">
+                        <li><span class="text-white font-medium">Sede Principal:</span> Bogotá D.C.</li>
+                        <li><span class="text-white font-medium">Planta Medellín:</span> Cobertura Antioquia</li>
+                        <li><span class="text-white font-medium">Planta Cali:</span> Cobertura Pacífico</li>
+                    </ul>
+                </div>
+
+                <!-- Enlaces -->
+                <div class="md:col-span-2">
+                    <h5 class="text-[#FFFF00] text-xs font-bold uppercase tracking-[0.2em] mb-6">Navegación</h5>
+                    <ul class="space-y-4 text-gray-400 font-light text-sm flex flex-col">
+                        <a href="#estudio" class="hover:text-white transition-colors w-fit">El Estudio</a>
+                        <a href="#divisiones" class="hover:text-white transition-colors w-fit">Divisiones</a>
+                        <a href="#infraestructura" class="hover:text-white transition-colors w-fit">Infraestructura</a>
+                    </ul>
+                </div>
+
+                <!-- Certificaciones -->
+                <div class="md:col-span-3">
+                    <h5 class="text-[#FFFF00] text-xs font-bold uppercase tracking-[0.2em] mb-6">Garantía</h5>
+                    <div class="bg-white/5 p-6 rounded-2xl border border-white/10">
+                        <h6 class="text-white font-black tracking-tight mb-2">Partner Certificado 3M™</h6>
+                        <p class="text-xs text-gray-500 font-light">
+                            Garantía MCS™ sobre materiales y procesos de manufactura.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Copyright -->
+            <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-gray-500 text-xs font-light">
+                    &copy; 2024 Gráficas Olímpica. Todos los derechos reservados.
+                </p>
+                <div class="flex gap-6 text-gray-500 text-sm">
+                    <a href="#" class="hover:text-white transition-colors"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" class="hover:text-white transition-colors"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts for Animations -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            once: true,
+            offset: 50,
+            duration: 800,
+            easing: 'ease-out-cubic',
+        });
+
+        // Header sizing logic
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                nav.classList.remove('py-4');
+                nav.classList.add('py-2');
+            } else {
+                nav.classList.add('py-4');
+                nav.classList.remove('py-2');
+            }
+        });
+    </script>
+</body>
+</html>
